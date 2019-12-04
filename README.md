@@ -37,3 +37,20 @@ type this command in your workdir(such as D:/tensorflow-r1.13/)
 
 ## 9 config  env  in  vs2015
 if  still  have  link  error,  add  unresolved  external  symbols  in  tf_sy_msvc.lds  in  step  2  and  repeat  following  steps.
+
+Include path in VS:
+D:\tensorflow-r1.13\bin\lib
+D:\tensorflow-r1.13\bin\include
+D:\tensorflow-r1.13\bin\include\tensorflow\include
+D:\tensorflow-r1.13\bazel-tensorflow-r1.13\external\eigen_archive
+D:\tensorflow-r1.13\bin\include\tensorflow\include\external\com_google_absl
+D:\tensorflow-r1.13\bin\include\tensorflow\include\external\protobuf_archive\src
+
+if encounter syntax error in logging.h
+
+C:\tensorflow\tensorflow/core/platform/default/logging.h(232): error C2589: '(': illegal token on right side of '::'  
+C:\tensorflow\tensorflow/core/platform/default/logging.h(232): error C2059: syntax error: '::'  
+C:\tensorflow\tensorflow/core/platform/default/logging.h(232): error C2143: syntax error: missing ';' before '{'
+
+it is the windows problem of confusion between max() and std::max(). 
+solution: change std::xxx::max() to (std::xxx::max)()
