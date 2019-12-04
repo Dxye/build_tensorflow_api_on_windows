@@ -32,8 +32,8 @@ type this command in your workdir(such as D:/tensorflow-r1.13/)
 '''awk  -F  '  '  '{print  $NF}'  .\tensorflow1.txt  >  .\tensorflow.def '''
 ** if  encounter  scrambled  code,  transfer  tensorflow1.txt  to  utf8  format  first
 
-##8 generate  lib  file
+## 8 generate  lib  file
 '''lib  /def:".\tensorflow.def"  /out:".\tensorflow.lib"  /machine:x64 '''
 
-##9 config  env  in  vs2015
+## 9 config  env  in  vs2015
 if  still  have  link  error,  add  unresolved  external  symbols  in  tf_sy_msvc.lds  in  step  2  and  repeat  following  steps.
